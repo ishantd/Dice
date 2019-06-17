@@ -1,0 +1,131 @@
+
+
+body { 
+    background-color: rgb(25, 25, 25);
+}
+
+h1{
+    color: whitesmoke;
+}
+
+.cube {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #CCC;
+  margin: 80px;
+  perspective: 400px;
+}
+
+.all-faces {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 3s;
+  
+}
+
+.all-faces.front-face  { 
+    transform: translateZ(-100px);
+}
+
+.all-faces.right-face  { 
+    transform: translateZ(-100px) rotateY( -90deg);
+}
+
+.all-faces.back-face   { 
+    transform: translateZ(-100px) rotateY(-180deg);
+}
+
+.all-faces.left-face   { 
+    transform: translateZ(-100px) rotateY(  90deg);
+}
+
+.all-faces.top-face    { 
+    transform: translateZ(-100px) rotateX( -90deg);
+}
+
+.all-faces.bottom-face { 
+    transform: translateZ(-100px) rotateX(  90deg);
+}
+
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  line-height: 200px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  background-color: greenyellow;
+}
+
+.front-face  { 
+    opacity: 0.4;
+    transform: rotateY(  0deg) translateZ(100px);
+ }
+.right-face  { 
+    opacity: 0.6;
+    transform: rotateY( 90deg) translateZ(100px);
+}
+.back-face   { 
+    opacity: 0.8;
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+.left-face   { 
+    opacity: 0.6;
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+
+.top-face    { 
+    opacity: 0.6;
+    transform: rotateX( 90deg) translateZ(100px);
+}
+.bottom-face { 
+    opacity: 0.6;
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+/* .all-faces:active {
+    transform: rotate(60deg);
+    transform: rotateY(60deg);
+    transform: rotateX(60deg);
+} */
+/* .all-faces:hover { */
+    /* transform: translateX(30px); */
+    /* transform: rotate(60deg); */
+    /* transform: rotateZ(350deg); */
+    /* transform: rotateY(60deg); */
+    /* transform: rotate3d(100deg,100deg,100deg,30deg)     */
+
+/* } */
+
+.cube {
+  animation-duration: 3s;
+  animation-name: slide;
+}
+
+@keyframes slide {
+  from {
+     transform: rotateY(0deg);
+     transform: rotateX(0deg);
+  }
+
+  to {
+    transform: rotateY(120deg);
+     transform: rotateX(60deg);
+  }
+}
+
+/* .cube:hover {
+    transform: rotateZ(60deg);
+} */
+
+
+
